@@ -1,10 +1,13 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { TelegrafModule } from 'nestjs-telegraf';
+import { BotUpdate } from './bot.update';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    TelegrafModule.forRoot({
+      token: process.env.BOT_TOKEN as string, // используем переменную окружения
+    }),
+  ],
+  providers: [BotUpdate],
 })
 export class AppModule {}
