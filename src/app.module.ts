@@ -1,13 +1,15 @@
 import { Module } from '@nestjs/common';
-import { TelegrafModule } from 'nestjs-telegraf';
-import { BotUpdate } from './bot.update';
+import { BotModule } from './bot/bot.module';
+import { TelegramModule } from './telegram/telegram.module';
+import { LeadModule } from './lead/lead.module';
+import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
-    TelegrafModule.forRoot({
-      token: process.env.BOT_TOKEN as string, // используем переменную окружения
-    }),
+    BotModule,
+    TelegramModule,
+    LeadModule,
+    MongooseModule.forRoot(process.env.MONGO_URI as string),
   ],
-  providers: [BotUpdate],
 })
 export class AppModule {}
