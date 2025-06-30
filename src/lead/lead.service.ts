@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Lead } from './lead.schema';
+import { Lead } from './schemas/lead.schema';
 import { Model } from 'mongoose';
 import { ScannedLead } from './interfaces/scanned-lead.interface';
 

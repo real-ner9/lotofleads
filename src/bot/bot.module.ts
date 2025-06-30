@@ -3,6 +3,7 @@ import { TelegrafModule } from 'nestjs-telegraf';
 import { BotUpdate } from './bot.update';
 import { TelegramModule } from '../telegram/telegram.module';
 import { LeadModule } from '../lead/lead.module';
+import { BotService } from './bot.service';
 
 @Module({
   imports: [
@@ -10,6 +11,6 @@ import { LeadModule } from '../lead/lead.module';
     TelegramModule,
     LeadModule,
   ],
-  providers: [BotUpdate],
+  providers: [BotUpdate, BotService],
 })
 export class BotModule {}

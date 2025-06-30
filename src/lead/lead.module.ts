@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Lead, LeadSchema } from './lead.schema';
+import { Lead, LeadSchema } from './schemas/lead.schema';
 import { LeadService } from './lead.service';
 
 @Module({
